@@ -4,7 +4,9 @@ var express = require('express');
 
 kue.redis.createClient = function(){
   var client = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
-  //client.auth('password');
+	if (process.env.REDIS_AUTH) {
+		client.auth(process.env.REDIS_AUTH);
+	}
   client.on('error', function (err) {
     console.error(err);
   });
@@ -12,7 +14,6 @@ kue.redis.createClient = function(){
 };
 
 kue.app.set('title', 'Konfect Kue');
-//kue.app.listen(process.env.PORT || 3000);
 
 var app = express();
 app.use(express.basicAuth('hello', 'joe'));
