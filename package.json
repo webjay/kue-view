@@ -1,0 +1,14 @@
+{
+  "name": "konfect-kue",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "kue": "0.6.x",
+    "redis": "0.8.x",
+    "hiredis": "0.1.x",
+    "express": "3.4.x",
+  }
+}
