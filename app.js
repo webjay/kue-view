@@ -12,9 +12,9 @@ kue.redis.createClient = function(){
 };
 
 kue.app.set('title', 'Konfect Kue');
+kue.app.listen(process.env.PORT || 3000);
 
-
-var app = express();
-app.use(express.basicAuth('hello', 'joe'));
-app.use(kue.app);
-app.listen(process.env.PORT || 3000);
+// var app = express();
+// app.use(express.basicAuth('hello', 'joe'));
+// app.use(kue.app);
+// app.listen(process.env.PORT || 3000);
